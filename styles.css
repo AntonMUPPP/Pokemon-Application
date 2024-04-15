@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.poke-container{
+    background-color: gray;
+    width: 1200px;
+    height: 800px;
+    border-radius: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.poke-container ul{
+    list-style-type: none;
+}
+
+.pokemon-card-container{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-container{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-container > select{
+    width: 400px;
+    height: 40px;
+    text-indent: 12px;
+    font-size: 16px;
+}
+
+.pokemon{
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.pokemon li p{
+    font-size: 24px;
+}
+
+.type-container{
+    height: 36px;
+}
+
+.bottom-btn{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+}
+
+.higher-stat {
+    color: green;
+}
+
+.lower-stat {
+    color: red;
+}
+
+.equal-stat {
+    color: orange;
+}
