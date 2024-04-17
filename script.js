@@ -71,18 +71,23 @@ class Pokemon{
 
             const statElementsOne = document.querySelectorAll('#p1 li')
             const statElementsTwo = document.querySelectorAll('#p2 li')
+
+            let poke1Win = 0
+            let poke2Win = 0
             
             //Goes through every index of the arrays and gives them a class depending on if the value is higher, lower or equal to the corresponding stat of the other pokemon
             for(let i = 0; i < pokemonOneArr.length; i++){
                 if(pokemonOneArr[i] > pokemonTwoArr[i]){
                     statElementsOne[i].classList.add('higher-stat')
                     statElementsOne[i].classList.remove('lower-stat', 'equal-stat')
+                    poke1Win++
                     
                     statElementsTwo[i].classList.add('lower-stat')
                     statElementsTwo[i].classList.remove('higher-stat', 'equal-stat')
                 }else if(pokemonOneArr[i] < pokemonTwoArr[i]){
                     statElementsOne[i].classList.add('lower-stat')
                     statElementsOne[i].classList.remove('higher-stat', 'equal-stat')
+                    poke2Win++
                     
                     statElementsTwo[i].classList.add('higher-stat')
                     statElementsTwo[i].classList.remove('lower-stat', 'equal-stat')
@@ -93,6 +98,26 @@ class Pokemon{
                     statElementsTwo[i].classList.add('equal-stat')
                     statElementsTwo[i].classList.remove('higher-stat', 'lower-stat')
                 }
+            }
+
+            const winnerText = document.querySelector(".comp-winner")
+            winnerText.innerText = ""
+
+            if(poke1Win > poke2Win){
+                const winnerText = document.querySelector(".comp-winner")
+                const winText = document.createElement("p")
+                winText.innerText = `${pokemonOneData.name} has more higher stats!`
+                winnerText.append(winText)
+            }else if(poke1Win < poke2Win){
+                const winnerText = document.querySelector(".comp-winner")
+                const winText = document.createElement("p")
+                winText.innerText = `${pokemonTwoData.name} has more higher stats!`
+                winnerText.append(winText)
+            }else{
+                const winnerText = document.querySelector(".comp-winner")
+                const winText = document.createElement("p")
+                winText.innerText = `Both pokemon have equal number of high stats!`
+                winnerText.append(winText)
             }
         }catch(error){
             console.error("Error comparing pokemon: ", error)
